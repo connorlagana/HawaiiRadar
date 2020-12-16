@@ -15,6 +15,7 @@
 		43A3148125899C88001C2462 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A3147F25899C88001C2462 /* LaunchScreen.storyboard */; };
 		43A3148C25899C88001C2462 /* HawaiiRadarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A3148B25899C88001C2462 /* HawaiiRadarTests.swift */; };
 		43A3149725899C88001C2462 /* HawaiiRadarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A3149625899C88001C2462 /* HawaiiRadarUITests.swift */; };
+		43A314A925899CF3001C2462 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A314A825899CF3001C2462 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		43A3149225899C88001C2462 /* HawaiiRadarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HawaiiRadarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A3149625899C88001C2462 /* HawaiiRadarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HawaiiRadarUITests.swift; sourceTree = "<group>"; };
 		43A3149825899C88001C2462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43A314A825899CF3001C2462 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		43A3147325899C87001C2462 /* HawaiiRadar */ = {
 			isa = PBXGroup;
 			children = (
+				43A314A725899CD2001C2462 /* Components */,
 				43A3147425899C87001C2462 /* AppDelegate.swift */,
 				43A3147625899C87001C2462 /* SceneDelegate.swift */,
 				43A3147825899C87001C2462 /* ContentView.swift */,
@@ -134,6 +137,14 @@
 				43A3149825899C88001C2462 /* Info.plist */,
 			);
 			path = HawaiiRadarUITests;
+			sourceTree = "<group>";
+		};
+		43A314A725899CD2001C2462 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				43A314A825899CF3001C2462 /* MapView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43A3147525899C87001C2462 /* AppDelegate.swift in Sources */,
+				43A314A925899CF3001C2462 /* MapView.swift in Sources */,
 				43A3147725899C87001C2462 /* SceneDelegate.swift in Sources */,
 				43A3147925899C87001C2462 /* ContentView.swift in Sources */,
 			);
