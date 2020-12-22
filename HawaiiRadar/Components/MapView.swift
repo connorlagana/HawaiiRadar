@@ -9,7 +9,7 @@ import SwiftUI
 import MapKit
 import Combine
 
-struct BeachItem: Decodable{
+struct BeachItem: Decodable {
     let beach, island, shore, lat, lon, nearshore, offshore, updated: String
 }
 
