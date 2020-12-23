@@ -3,11 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4318662725927509006C81D1 /* IslandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4318662625927509006C81D1 /* IslandView.swift */; };
+		4318662C25929A4E006C81D1 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4318662B25929A4E006C81D1 /* Api.swift */; };
+		431866372592A10E006C81D1 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 431866362592A10E006C81D1 /* Lottie */; };
+		4318663F2592A14A006C81D1 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4318663E2592A14A006C81D1 /* LottieView.swift */; };
+		431866442592A372006C81D1 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431866432592A372006C81D1 /* LoadingView.swift */; };
+		431866552592A4D1006C81D1 /* rain.json in Resources */ = {isa = PBXBuildFile; fileRef = 431866532592A4D1006C81D1 /* rain.json */; };
+		431866562592A4D1006C81D1 /* sunny.json in Resources */ = {isa = PBXBuildFile; fileRef = 431866542592A4D1006C81D1 /* sunny.json */; };
 		43A3147525899C87001C2462 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A3147425899C87001C2462 /* AppDelegate.swift */; };
 		43A3147725899C87001C2462 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A3147625899C87001C2462 /* SceneDelegate.swift */; };
 		43A3147925899C87001C2462 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A3147825899C87001C2462 /* ContentView.swift */; };
@@ -38,6 +44,11 @@
 
 /* Begin PBXFileReference section */
 		4318662625927509006C81D1 /* IslandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandView.swift; sourceTree = "<group>"; };
+		4318662B25929A4E006C81D1 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		4318663E2592A14A006C81D1 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		431866432592A372006C81D1 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		431866532592A4D1006C81D1 /* rain.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rain.json; sourceTree = "<group>"; };
+		431866542592A4D1006C81D1 /* sunny.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sunny.json; sourceTree = "<group>"; };
 		43A3147125899C87001C2462 /* HawaiiRadar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HawaiiRadar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A3147425899C87001C2462 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43A3147625899C87001C2462 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				431866372592A10E006C81D1 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +92,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		431866522592A4C6006C81D1 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				431866532592A4D1006C81D1 /* rain.json */,
+				431866542592A4D1006C81D1 /* sunny.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
 		43A3146825899C87001C2462 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +124,7 @@
 		43A3147325899C87001C2462 /* HawaiiRadar */ = {
 			isa = PBXGroup;
 			children = (
+				431866522592A4C6006C81D1 /* Lottie */,
 				43A314A725899CD2001C2462 /* Components */,
 				43A3147425899C87001C2462 /* AppDelegate.swift */,
 				43A3147625899C87001C2462 /* SceneDelegate.swift */,
@@ -146,6 +168,9 @@
 			children = (
 				43A314A825899CF3001C2462 /* MapView.swift */,
 				4318662625927509006C81D1 /* IslandView.swift */,
+				4318662B25929A4E006C81D1 /* Api.swift */,
+				4318663E2592A14A006C81D1 /* LottieView.swift */,
+				431866432592A372006C81D1 /* LoadingView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -166,6 +191,9 @@
 			dependencies = (
 			);
 			name = HawaiiRadar;
+			packageProductDependencies = (
+				431866362592A10E006C81D1 /* Lottie */,
+			);
 			productName = HawaiiRadar;
 			productReference = 43A3147125899C87001C2462 /* HawaiiRadar.app */;
 			productType = "com.apple.product-type.application";
@@ -237,6 +265,9 @@
 				Base,
 			);
 			mainGroup = 43A3146825899C87001C2462;
+			packageReferences = (
+				431866352592A10E006C81D1 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 43A3147225899C87001C2462 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -255,7 +286,9 @@
 			files = (
 				43A3148125899C88001C2462 /* LaunchScreen.storyboard in Resources */,
 				43A3147E25899C88001C2462 /* Preview Assets.xcassets in Resources */,
+				431866562592A4D1006C81D1 /* sunny.json in Resources */,
 				43A3147B25899C88001C2462 /* Assets.xcassets in Resources */,
+				431866552592A4D1006C81D1 /* rain.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,9 +313,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4318662C25929A4E006C81D1 /* Api.swift in Sources */,
 				43A3147525899C87001C2462 /* AppDelegate.swift in Sources */,
 				43A314A925899CF3001C2462 /* MapView.swift in Sources */,
 				43A3147725899C87001C2462 /* SceneDelegate.swift in Sources */,
+				4318663F2592A14A006C81D1 /* LottieView.swift in Sources */,
+				431866442592A372006C81D1 /* LoadingView.swift in Sources */,
 				43A3147925899C87001C2462 /* ContentView.swift in Sources */,
 				4318662725927509006C81D1 /* IslandView.swift in Sources */,
 			);
@@ -453,6 +489,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"HawaiiRadar/Preview Content\"";
 				DEVELOPMENT_TEAM = 977B62V6NR;
 				ENABLE_PREVIEWS = YES;
@@ -474,6 +511,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"HawaiiRadar/Preview Content\"";
 				DEVELOPMENT_TEAM = 977B62V6NR;
 				ENABLE_PREVIEWS = YES;
@@ -613,6 +651,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		431866352592A10E006C81D1 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		431866362592A10E006C81D1 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 431866352592A10E006C81D1 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 43A3146925899C87001C2462 /* Project object */;
 }

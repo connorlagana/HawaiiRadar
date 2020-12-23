@@ -7,57 +7,23 @@
 
 import SwiftUI
 
-struct BeachCondition: Decodable {
-    let beach, island, shore, lat, lon, nearshore, offshore, temp, weather, wind, surf: String
-}
-
-class IslandViewModel {
-    
-    init() {
-        getislandData(island: "oahu")
-    }
-    
-    func getislandData(island: String) {
-        let str = "https://hawaiibeachsafety.com/rest/conditions.json?island=\(island)"
-        
-        guard let url = URL(string: str) else { return }
-        URLSession.shared.dataTask(with: url) { (data, resp, err) in
-            guard let data = data else { return }
-            do {
-                let res = try JSONDecoder().decode(Array<BeachCondition>.self, from: data)
-                
-                    //Step 1: Fetch API data and store in Beach Items Array
-                print("BeachCondition1: \(res[0])")
-                    
-                DispatchQueue.main.async {
-                    
-                    //Put shit here
-                    
-                }
-                
-            } catch {
-                print("Failure: \(error)")
-            }
-        }.resume()
-    }
-}
-
 struct TestView: View {
     var beachToDisplay: String
     @State var showingDetail = false
+    @State var beachConditions = [BeachCondition]()
     
     var body: some View {
         
         NavigationView {
                 
             ScrollView {
-                ForEach(["Sunset Beach", "Bellows Field Beach", "Ehukai Beach", "Aliʻi Beach Park", "Hanauma Bay", "Kailua Beach", "Flat Island", "Mokulua Islands", "Waikiki - Kapiolani Park"], id: \.self) { beach in
+                ForEach(beachConditions, id: \.self) { beach in
                     
                     NavigationLink(
                         destination: DetailView(beach: beach),
                         label: {
                             HStack {
-                                Text(beach)
+                                Text(beach.beach)
                                     .foregroundColor(.black)
                                 Spacer()
                             }
@@ -71,6 +37,12 @@ struct TestView: View {
                     
                 }
             }
+            .onAppear(perform: {
+                Api().getislandData(island: beachToDisplay) { (posts) in
+                    self.beachConditions = posts
+                    
+                }
+            })
             .navigationBarTitle(beachToDisplay)
         }
         
@@ -93,9 +65,23 @@ struct IslandView: View {
 }
 
 struct DetailView: View {
-    var beach: String
+    var beach: BeachCondition
+    
     var body: some View {
-        Text(beach)
+        ScrollView {
+            VStack {
+                Text(beach.beach).font(.title)
+                HStack {
+                    Text(beach.temp)
+                    switch beach.weather {
+                    case "Fair": LottieView(name: "sunny").frame(width: 100, height: 100)
+                    case "Overcast": LottieView(name: "rain").frame(width: 100, height: 100)
+                    default:
+                        Text("q")
+                    }
+                }
+            }
+        }
     }
 }
 
