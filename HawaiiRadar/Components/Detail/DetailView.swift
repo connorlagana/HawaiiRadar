@@ -25,6 +25,7 @@ struct DetailView: View {
 //            DetailHScroll(hourTemps: temps)
             SurfView(beach: beach)
             Divider().background(Color.white)
+            DetailMapView(beach: beach)
         }
         .background(LinearGradient.init(gradient: Gradient.init(colors: [lightYellow, darkYellow]), startPoint: .top, endPoint: .bottom))
         .edgesIgnoringSafeArea(.all)

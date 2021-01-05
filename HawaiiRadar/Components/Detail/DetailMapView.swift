@@ -10,24 +10,23 @@ import MapKit
 import Combine
 
 struct MapViewContainer2: UIViewRepresentable {
-    
-    @ObservedObject var vm = MapSearchingViewModel()
-    
-    var annotationArr: [MKPointAnnotation]?
-    
     let mv = MKMapView()
     
+    var annotation: MKPointAnnotation?
+    var beachCon: BeachCondition?
+    
     func makeUIView(context: Context) -> MKMapView {
-        setupRegionForMap(lat: vm.coordinates.latitude, lon: vm.coordinates.longitude)
+        
+        //THIS IS REALLY BAD CODE BUT IT WORKS SO AS OF RIGHT NOW IM GONNA LEAVE IT BC IM REALLY TIRED RN
+        setupRegionForMap(lat: Double(beachCon!.lat)!, lon: Double(beachCon!.lon)!)
         return mv
     }
     
     func updateUIView(_ uiView: MKMapView, context: Context) {
-        if let annotationArr = annotationArr {
-            uiView.addAnnotations(annotationArr)
-        }
         
-        setupRegionForMap(lat: vm.coordinates.latitude, lon: vm.coordinates.longitude)
+        if let annotation = annotation {
+            uiView.addAnnotation(annotation)
+        }
         
     }
     
@@ -43,12 +42,6 @@ struct MapViewContainer2: UIViewRepresentable {
 }
 
 class MapSearchingViewModel2: ObservableObject {
-    @Published var annotations = [MKPointAnnotation]()
-    @Published var isSearching = false
-    @Published var searchQuery = ""
-    @Published var mapItems = [MKMapItem]()
-    @Published var selectedMapItem: MKMapItem?
-    @Published var beachItems = [BeachItem]()
     
     @Published var coordinates = CLLocationCoordinate2D(latitude: 20.914, longitude: -156.393)
     
@@ -60,13 +53,23 @@ class MapSearchingViewModel2: ObservableObject {
 }
 
 struct DetailMapView: View {
+    
+    @State var annotation: MKPointAnnotation?
+    
+    var beach: BeachCondition
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        MapViewContainer2(annotation: annotation, beachCon: beach)
+            .frame(height: 350)
+            .onAppear(perform: {
+                let anno = MKPointAnnotation()
+                anno.title = beach.beach
+                
+                anno.coordinate = .init(latitude: Double(beach.lat) ?? 0, longitude: Double(beach.lon) ?? 0)
+                self.annotation = anno
+                
+                
+            })
     }
 }
 
-struct DetailMapView_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailMapView()
-    }
-}

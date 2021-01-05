@@ -86,19 +86,33 @@ extension String {
         
         else {
             let arr = str.split(separator: " ")
-            print("init this bitch", arr)
+            if arr.contains("gusting") {
+                return ("\(arr[4]) MPH")
+            }
             return ("\(arr[2]) MPH")
         }
     }
     
     func extractDirectionFromWind(str: String) -> Int {
+        
+        
+        
         if str == "calm" {
             return 0
         }
         
         else {
             let arr = str.split(separator: " ")
-            let direction = arr[0]
+            let direction: String
+            
+            if arr.contains("gusting") {
+                direction = String(arr[2])
+            }
+            else {
+                direction = String(arr[0])
+                
+                
+            }
             
             switch direction {
             case "Northeast":

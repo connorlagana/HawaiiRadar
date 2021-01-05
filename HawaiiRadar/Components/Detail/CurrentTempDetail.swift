@@ -25,62 +25,99 @@ struct CurrentTempDetail: View {
                         .foregroundColor(.white)
                         .font(Font.custom("Nunito-Bold", size: 84))
                         .padding(.top, 20)
-                        
-                    //Cant make API request for some reason idk
-                    
-//                    HStack {
-//                        HStack {
-//                            Image("back")
-//                                .renderingMode(.template)
-//                                .resizable()
-//                                .frame(width: 15, height: 15)
-//                                .foregroundColor(Color.white.opacity(0.5))
-//                                .rotationEffect(.degrees(90))
-//
-//                            Text("74°")
-//                                .foregroundColor(.white)
-//                                .font(Font.custom("Nunito-Regular", size: 14))
-//                        }
-//
-//                        HStack {
-//                            Image("back")
-//                                .renderingMode(.template)
-//                                .resizable()
-//                                .frame(width: 15, height: 15)
-//                                .foregroundColor(Color.white.opacity(0.5))
-//                                .rotationEffect(.degrees(-90))
-//                            Text("56°")
-//                                .foregroundColor(.white)
-//                                .font(Font.custom("Nunito-Regular", size: 14))
-//                        }
-//                    }.frame(width: 100, height: 30)
                 }
                 Spacer()
-    //            LottieView(name: "sunny")
-    //                .frame(width: 200, height: 100, alignment: .trailing)
+                
                 VStack {
-                    Image("sun-big")
-                        .renderingMode(.template)
-                        .resizable()
-                        .foregroundColor(.white)
-                        .frame(width: 100, height: 100, alignment: .trailing)
-                        .scaleEffect(showDetail ? 1 : 0)
-                        .animation(.spring())
+                    Text(beach.weather)
+                    switch beach.weather {
+                    case "Partly Cloudy":
+                        Image("clouds-and-sun")
+                            .renderingMode(.template)
+                            .resizable()
+                            .foregroundColor(.white)
+                            .frame(width: 100, height: 100, alignment: .trailing)
+                            .scaleEffect(showDetail ? 1 : 0)
+                            .animation(.spring())
+                    case "Light Rain":
+                        Image("rain")
+                            .renderingMode(.template)
+                            .resizable()
+                            .foregroundColor(.white)
+                            .frame(width: 100, height: 100, alignment: .trailing)
+                            .scaleEffect(showDetail ? 1 : 0)
+                            .animation(.spring())
+                    case "Overcast":
+                        Image("rain")
+                            .renderingMode(.template)
+                            .resizable()
+                            .foregroundColor(.white)
+                            .frame(width: 100, height: 100, alignment: .trailing)
+                            .scaleEffect(showDetail ? 1 : 0)
+                            .animation(.spring())
+                    case "A Few Clouds":
+                        Image("clouds-and-sun")
+                            .renderingMode(.template)
+                            .resizable()
+                            .foregroundColor(.white)
+                            .frame(width: 100, height: 100, alignment: .trailing)
+                            .scaleEffect(showDetail ? 1 : 0)
+                            .animation(.spring())
+                    case "Mostly Cloudy":
+                        Image("cloud")
+                            .renderingMode(.template)
+                            .resizable()
+                            .foregroundColor(.white)
+                            .frame(width: 100, height: 100, alignment: .trailing)
+                            .scaleEffect(showDetail ? 1 : 0)
+                            .animation(.spring())
+                    case "Mostly Cloudy and Breezy":
+                        Image("cloud")
+                            .renderingMode(.template)
+                            .resizable()
+                            .foregroundColor(.white)
+                            .frame(width: 100, height: 100, alignment: .trailing)
+                            .scaleEffect(showDetail ? 1 : 0)
+                            .animation(.spring())
+                    case "Fair":
+                        Image("sun-big")
+                            .renderingMode(.template)
+                            .resizable()
+                            .foregroundColor(.white)
+                            .frame(width: 100, height: 100, alignment: .trailing)
+                            .scaleEffect(showDetail ? 1 : 0)
+                            .animation(.spring())
+                    case "A Few Clouds and Breezy":
+                        Image("wind")
+                            .renderingMode(.template)
+                            .resizable()
+                            .foregroundColor(.white)
+                            .frame(width: 100, height: 100, alignment: .trailing)
+                            .scaleEffect(showDetail ? 1 : 0)
+                            .animation(.spring())
+                    case "Partly Cloudy and Breezy":
+                        Image("wind")
+                            .renderingMode(.template)
+                            .resizable()
+                            .foregroundColor(.white)
+                            .frame(width: 100, height: 100, alignment: .trailing)
+                            .scaleEffect(showDetail ? 1 : 0)
+                            .animation(.spring())
+                    default:
+                        Text(beach.weather)
+                    }
+                    
+                    
                     
                 }
                 
                 Spacer()
             }
             
-            //Cant make API request for weather for some reason idk
-            
             VStack(alignment: .leading) {
                 Text(beach.weather)
                     .foregroundColor(.white)
                     .font(Font.custom("Nunito-Regular", size: 20))
-//                Text("Feels like 68°")
-//                    .foregroundColor(Color.white.opacity(0.7))
-//                    .font(Font.custom("Nunito-Regular", size: 14))
             }
         }
         .padding(.leading, 20)

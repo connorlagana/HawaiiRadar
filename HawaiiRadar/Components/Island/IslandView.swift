@@ -7,14 +7,6 @@
 
 import SwiftUI
 
-class GridViewModel: ObservableObject {
-    @Published var items = 0..<10
-    
-    init() {
-        UINavigationBar.appearance().tintColor = .red
-    }
-}
-
 struct IslandView: View {
     var beachToDisplay: String
     

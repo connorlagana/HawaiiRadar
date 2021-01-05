@@ -27,7 +27,7 @@ struct Wind: Decodable, Hashable {
 class Api {
     func getislandData(island: String, completion: @escaping ([BeachCondition]) -> ()) {
         print("initializing")
-        let str = "https://hawaiibeachsafety.com/rest/conditions.json?island=\(island)"
+        let str = "https://hawaiibeachsafety.com/rest/conditions.json"
         
         guard let url = URL(string: str) else { return }
         URLSession.shared.dataTask(with: url) { (data, resp, err) in
