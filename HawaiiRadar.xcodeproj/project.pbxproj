@@ -14,6 +14,16 @@
 		431866442592A372006C81D1 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431866432592A372006C81D1 /* LoadingView.swift */; };
 		431866552592A4D1006C81D1 /* rain.json in Resources */ = {isa = PBXBuildFile; fileRef = 431866532592A4D1006C81D1 /* rain.json */; };
 		431866562592A4D1006C81D1 /* sunny.json in Resources */ = {isa = PBXBuildFile; fileRef = 431866542592A4D1006C81D1 /* sunny.json */; };
+		4362842C259D4C8D0008CAC1 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362842B259D4C8D0008CAC1 /* DetailView.swift */; };
+		4362F11525A2796500B3F9A2 /* IslandHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362F11425A2796500B3F9A2 /* IslandHeader.swift */; };
+		4362F11B25A279B400B3F9A2 /* IslandScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362F11A25A279B400B3F9A2 /* IslandScrollView.swift */; };
+		4362F12425A27DBF00B3F9A2 /* DetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362F12325A27DBF00B3F9A2 /* DetailHeader.swift */; };
+		4362F12C25A2802800B3F9A2 /* CurrentTempDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362F12B25A2802800B3F9A2 /* CurrentTempDetail.swift */; };
+		4362F13925A2AF0B00B3F9A2 /* DetailHScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362F13825A2AF0B00B3F9A2 /* DetailHScroll.swift */; };
+		4362F13E25A2B69300B3F9A2 /* WeeklyForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362F13D25A2B69300B3F9A2 /* WeeklyForecastView.swift */; };
+		4369251325A42DE900165B3E /* SurfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4369251225A42DE900165B3E /* SurfView.swift */; };
+		4369251B25A4351800165B3E /* DetailMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4369251A25A4351800165B3E /* DetailMapView.swift */; };
+		43960F0825A396620032701F /* BeachSquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43960F0725A396620032701F /* BeachSquareView.swift */; };
 		43A3147525899C87001C2462 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A3147425899C87001C2462 /* AppDelegate.swift */; };
 		43A3147725899C87001C2462 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A3147625899C87001C2462 /* SceneDelegate.swift */; };
 		43A3147925899C87001C2462 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A3147825899C87001C2462 /* ContentView.swift */; };
@@ -23,6 +33,9 @@
 		43A3148C25899C88001C2462 /* HawaiiRadarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A3148B25899C88001C2462 /* HawaiiRadarTests.swift */; };
 		43A3149725899C88001C2462 /* HawaiiRadarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A3149625899C88001C2462 /* HawaiiRadarUITests.swift */; };
 		43A314A925899CF3001C2462 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A314A825899CF3001C2462 /* MapView.swift */; };
+		43A6A678259D350A0085127D /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43A6A675259D350A0085127D /* Nunito-Regular.ttf */; };
+		43A6A679259D350A0085127D /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43A6A676259D350A0085127D /* Nunito-Bold.ttf */; };
+		43A6A67A259D350A0085127D /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43A6A677259D350A0085127D /* Nunito-Light.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +62,16 @@
 		431866432592A372006C81D1 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		431866532592A4D1006C81D1 /* rain.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rain.json; sourceTree = "<group>"; };
 		431866542592A4D1006C81D1 /* sunny.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sunny.json; sourceTree = "<group>"; };
+		4362842B259D4C8D0008CAC1 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		4362F11425A2796500B3F9A2 /* IslandHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandHeader.swift; sourceTree = "<group>"; };
+		4362F11A25A279B400B3F9A2 /* IslandScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandScrollView.swift; sourceTree = "<group>"; };
+		4362F12325A27DBF00B3F9A2 /* DetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeader.swift; sourceTree = "<group>"; };
+		4362F12B25A2802800B3F9A2 /* CurrentTempDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTempDetail.swift; sourceTree = "<group>"; };
+		4362F13825A2AF0B00B3F9A2 /* DetailHScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHScroll.swift; sourceTree = "<group>"; };
+		4362F13D25A2B69300B3F9A2 /* WeeklyForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyForecastView.swift; sourceTree = "<group>"; };
+		4369251225A42DE900165B3E /* SurfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfView.swift; sourceTree = "<group>"; };
+		4369251A25A4351800165B3E /* DetailMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMapView.swift; sourceTree = "<group>"; };
+		43960F0725A396620032701F /* BeachSquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeachSquareView.swift; sourceTree = "<group>"; };
 		43A3147125899C87001C2462 /* HawaiiRadar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HawaiiRadar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A3147425899C87001C2462 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43A3147625899C87001C2462 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +87,9 @@
 		43A3149625899C88001C2462 /* HawaiiRadarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HawaiiRadarUITests.swift; sourceTree = "<group>"; };
 		43A3149825899C88001C2462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43A314A825899CF3001C2462 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		43A6A675259D350A0085127D /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		43A6A676259D350A0085127D /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
+		43A6A677259D350A0085127D /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +127,31 @@
 			path = Lottie;
 			sourceTree = "<group>";
 		};
+		4362F11925A2797F00B3F9A2 /* Island */ = {
+			isa = PBXGroup;
+			children = (
+				4318662625927509006C81D1 /* IslandView.swift */,
+				4362F11425A2796500B3F9A2 /* IslandHeader.swift */,
+				4362F11A25A279B400B3F9A2 /* IslandScrollView.swift */,
+				43960F0725A396620032701F /* BeachSquareView.swift */,
+			);
+			path = Island;
+			sourceTree = "<group>";
+		};
+		4362F12225A27DA900B3F9A2 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				4362842B259D4C8D0008CAC1 /* DetailView.swift */,
+				4362F12325A27DBF00B3F9A2 /* DetailHeader.swift */,
+				4362F12B25A2802800B3F9A2 /* CurrentTempDetail.swift */,
+				4362F13825A2AF0B00B3F9A2 /* DetailHScroll.swift */,
+				4362F13D25A2B69300B3F9A2 /* WeeklyForecastView.swift */,
+				4369251225A42DE900165B3E /* SurfView.swift */,
+				4369251A25A4351800165B3E /* DetailMapView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		43A3146825899C87001C2462 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +175,7 @@
 		43A3147325899C87001C2462 /* HawaiiRadar */ = {
 			isa = PBXGroup;
 			children = (
+				43A6A674259D34E00085127D /* Fonts */,
 				431866522592A4C6006C81D1 /* Lottie */,
 				43A314A725899CD2001C2462 /* Components */,
 				43A3147425899C87001C2462 /* AppDelegate.swift */,
@@ -167,12 +219,23 @@
 			isa = PBXGroup;
 			children = (
 				43A314A825899CF3001C2462 /* MapView.swift */,
-				4318662625927509006C81D1 /* IslandView.swift */,
+				4362F11925A2797F00B3F9A2 /* Island */,
+				4362F12225A27DA900B3F9A2 /* Detail */,
 				4318662B25929A4E006C81D1 /* Api.swift */,
 				4318663E2592A14A006C81D1 /* LottieView.swift */,
 				431866432592A372006C81D1 /* LoadingView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		43A6A674259D34E00085127D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				43A6A676259D350A0085127D /* Nunito-Bold.ttf */,
+				43A6A677259D350A0085127D /* Nunito-Light.ttf */,
+				43A6A675259D350A0085127D /* Nunito-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,10 +347,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43A6A679259D350A0085127D /* Nunito-Bold.ttf in Resources */,
+				43A6A678259D350A0085127D /* Nunito-Regular.ttf in Resources */,
 				43A3148125899C88001C2462 /* LaunchScreen.storyboard in Resources */,
 				43A3147E25899C88001C2462 /* Preview Assets.xcassets in Resources */,
 				431866562592A4D1006C81D1 /* sunny.json in Resources */,
 				43A3147B25899C88001C2462 /* Assets.xcassets in Resources */,
+				43A6A67A259D350A0085127D /* Nunito-Light.ttf in Resources */,
 				431866552592A4D1006C81D1 /* rain.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,14 +379,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4369251325A42DE900165B3E /* SurfView.swift in Sources */,
 				4318662C25929A4E006C81D1 /* Api.swift in Sources */,
+				4362F12425A27DBF00B3F9A2 /* DetailHeader.swift in Sources */,
+				4362F12C25A2802800B3F9A2 /* CurrentTempDetail.swift in Sources */,
+				4369251B25A4351800165B3E /* DetailMapView.swift in Sources */,
+				4362F11525A2796500B3F9A2 /* IslandHeader.swift in Sources */,
+				4362842C259D4C8D0008CAC1 /* DetailView.swift in Sources */,
 				43A3147525899C87001C2462 /* AppDelegate.swift in Sources */,
+				4362F13925A2AF0B00B3F9A2 /* DetailHScroll.swift in Sources */,
 				43A314A925899CF3001C2462 /* MapView.swift in Sources */,
 				43A3147725899C87001C2462 /* SceneDelegate.swift in Sources */,
+				4362F13E25A2B69300B3F9A2 /* WeeklyForecastView.swift in Sources */,
 				4318663F2592A14A006C81D1 /* LottieView.swift in Sources */,
+				4362F11B25A279B400B3F9A2 /* IslandScrollView.swift in Sources */,
 				431866442592A372006C81D1 /* LoadingView.swift in Sources */,
 				43A3147925899C87001C2462 /* ContentView.swift in Sources */,
 				4318662725927509006C81D1 /* IslandView.swift in Sources */,
+				43960F0825A396620032701F /* BeachSquareView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
