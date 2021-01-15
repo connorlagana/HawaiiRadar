@@ -10,7 +10,7 @@ import SwiftUI
 struct DetailView: View {
     var beach: BeachCondition
     
-    @State var beachConditions = [BeachCondition]()
+//    @State var beachConditions = [BeachCondition]()
     
     @State var firstColor: Color = Color.init(red: 227/255, green: 182/255, blue: 72/255, opacity: 1)
     @State var secondColor: Color = Color.init(red: 222/255, green: 122/255, blue: 42/255, opacity: 1)
@@ -30,10 +30,10 @@ struct DetailView: View {
         .background(LinearGradient.init(gradient: Gradient.init(colors: [firstColor, secondColor]), startPoint: .top, endPoint: .bottom))
         .edgesIgnoringSafeArea(.all)
         .onAppear(perform: {
-            Api().getislandData(island: "Oahu") { (posts) in
-                self.beachConditions = posts
-                
-            }
+//            Api().getislandData(island: "Oahu") { (posts) in
+//                self.beachConditions = posts
+//
+//            }
             switch beach.weather {
             case "Partly Cloudy":
                 secondColor = Color.init(red: 240/255, green: 190/255, blue: 80/255, opacity: 1)
@@ -48,8 +48,8 @@ struct DetailView: View {
                 secondColor = Color.init(red: 252/255, green: 234/255, blue: 180/255, opacity: 1)
                 firstColor = Color.init(red: 225/255, green: 145/255, blue: 170/255, opacity: 1)
             case "Mostly Cloudy":
-                firstColor = Color.init(red: 252/255, green: 234/255, blue: 187/255, opacity: 1)
-                secondColor = Color.init(red: 248/255, green: 1181/255, blue: 0/255, opacity: 1)
+                firstColor = Color.init(red: 21/255, green: 153/255, blue: 87/255, opacity: 1)
+                secondColor = Color.init(red: 21/255, green: 87/255, blue: 153/255, opacity: 1)
             case "Mostly Cloudy and Breezy":
                 firstColor = Color.gray
             case "Fair":

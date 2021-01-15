@@ -29,10 +29,9 @@ struct CurrentTempDetail: View {
                 Spacer()
                 
                 VStack {
-                    Text(beach.weather)
                     switch beach.weather {
                     case "Partly Cloudy":
-                        Image("clouds-and-sun")
+                        Image("clouds-and-sun-big")
                             .renderingMode(.template)
                             .resizable()
                             .foregroundColor(.white)
@@ -40,7 +39,7 @@ struct CurrentTempDetail: View {
                             .scaleEffect(showDetail ? 1 : 0)
                             .animation(.spring())
                     case "Light Rain":
-                        Image("rain")
+                        Image("rain-big")
                             .renderingMode(.template)
                             .resizable()
                             .foregroundColor(.white)
@@ -48,7 +47,7 @@ struct CurrentTempDetail: View {
                             .scaleEffect(showDetail ? 1 : 0)
                             .animation(.spring())
                     case "Overcast":
-                        Image("rain")
+                        Image("rain-big")
                             .renderingMode(.template)
                             .resizable()
                             .foregroundColor(.white)
@@ -56,7 +55,7 @@ struct CurrentTempDetail: View {
                             .scaleEffect(showDetail ? 1 : 0)
                             .animation(.spring())
                     case "A Few Clouds":
-                        Image("clouds-and-sun")
+                        Image("clouds-and-sun-big")
                             .renderingMode(.template)
                             .resizable()
                             .foregroundColor(.white)
@@ -64,7 +63,7 @@ struct CurrentTempDetail: View {
                             .scaleEffect(showDetail ? 1 : 0)
                             .animation(.spring())
                     case "Mostly Cloudy":
-                        Image("cloud")
+                        Image("cloud-big")
                             .renderingMode(.template)
                             .resizable()
                             .foregroundColor(.white)
@@ -72,7 +71,7 @@ struct CurrentTempDetail: View {
                             .scaleEffect(showDetail ? 1 : 0)
                             .animation(.spring())
                     case "Mostly Cloudy and Breezy":
-                        Image("cloud")
+                        Image("cloud-big")
                             .renderingMode(.template)
                             .resizable()
                             .foregroundColor(.white)
@@ -88,7 +87,7 @@ struct CurrentTempDetail: View {
                             .scaleEffect(showDetail ? 1 : 0)
                             .animation(.spring())
                     case "A Few Clouds and Breezy":
-                        Image("wind")
+                        Image("wind-big")
                             .renderingMode(.template)
                             .resizable()
                             .foregroundColor(.white)
@@ -96,7 +95,15 @@ struct CurrentTempDetail: View {
                             .scaleEffect(showDetail ? 1 : 0)
                             .animation(.spring())
                     case "Partly Cloudy and Breezy":
-                        Image("wind")
+                        Image("wind-big")
+                            .renderingMode(.template)
+                            .resizable()
+                            .foregroundColor(.white)
+                            .frame(width: 100, height: 100, alignment: .trailing)
+                            .scaleEffect(showDetail ? 1 : 0)
+                            .animation(.spring())
+                    case "Mostly Cloudy with Haze":
+                        Image("cloud-big")
                             .renderingMode(.template)
                             .resizable()
                             .foregroundColor(.white)

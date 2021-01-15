@@ -8,8 +8,9 @@
 import SwiftUI
 import MapKit
 import Combine
+import CoreLocation
 
-struct BeachItem: Decodable {
+struct BeachItem: Decodable, Hashable {
     let beach, island, shore, lat, lon, nearshore, offshore, updated: String
 }
 
@@ -52,30 +53,28 @@ class MapSearchingViewModel: ObservableObject {
     @Published var searchQuery = ""
     @Published var mapItems = [MKMapItem]()
     @Published var selectedMapItem: MKMapItem?
-    @Published var beachItems = [BeachItem]()
+    @Published var beachItems = [BeachCondition]()
     
-    @Published var coordinates = CLLocationCoordinate2D(latitude: 20.914, longitude: -156.393)
+    var locationManager = CLLocationManager()
+    
+    @Published var coordinates = CLLocationCoordinate2D(latitude: 21.363921153800, longitude: -157.709575888900)
     
     var cancellable: AnyCancellable?
     
+    var currentLoc: CLLocation!
+    
     init() {
-        print("Initializing view model")
-        // combine code
-//        cancellable = $searchQuery.debounce(for: .milliseconds(500), scheduler: RunLoop.main)
-//            .sink { [weak self] (searchTerm) in
-//                self?.searchForMapItem(arr: self?.performSearch() ?? [])
-//        }
-//        performSearch()
+        performSearch()
     }
     
-    func performSearch(){
+    func performSearch() {
         print("from performSearch")
-        let str = "https://hawaiibeachsafety.com/rest/ratings.json"
+        let str = "https://hawaiibeachsafety.com/rest/conditions.json"
         guard let url = URL(string: str) else { return }
         URLSession.shared.dataTask(with: url) { (data, resp, err) in
             guard let data = data else { return }
             do {
-                let res = try JSONDecoder().decode(Array<BeachItem>.self, from: data)
+                let res = try JSONDecoder().decode(Array<BeachCondition>.self, from: data)
                 
                     //Step 1: Fetch API data and store in Beach Items Array
                     
@@ -93,40 +92,22 @@ class MapSearchingViewModel: ObservableObject {
         
     }
     
-    func searchForMapItem(arr: [BeachItem]) {
+    func searchForMapItem(arr: [BeachCondition]) {
         isSearching = true
         print("From searchForMapItem")
         print("Arr: \(arr)")
         
+        var annos: [MKPointAnnotation] = []
         //Step 2: For each in Beach Items Array, find each MKMapItem
         for item in arr {
-            let request = MKLocalSearch.Request()
-            request.naturalLanguageQuery = "\(item.beach), Hawaii"
-            print("\(item.beach), Hawaii")
+            let anno = MKPointAnnotation()
+            anno.title = item.beach
+            anno.coordinate = .init(latitude: Double(item.lat) ?? 0, longitude: Double(item.lon) ?? 0)
             
-            let localSearch = MKLocalSearch(request: request)
-            localSearch.start { (resp, err) in
-                // handle your error
-                
-//                self.mapItems = resp?.mapItems ?? []
-                
-                
-                
-                resp?.mapItems.forEach({ (mapItem) in
-                    print(mapItem.name ?? "")
-                    let annotation = MKPointAnnotation()
-                    annotation.title = mapItem.name
-                    annotation.coordinate = mapItem.placemark.coordinate
-                    self.annotations.append(annotation)
-                    self.mapItems.append(mapItem)
-                })
-                
-                self.isSearching = false
-                
-                
-            }
-            
+            annos.append(anno)
         }
+        
+        self.annotations = annos
     }
 }
 
@@ -137,104 +118,97 @@ struct MapView: View {
     @State var isMenuShowing = false
     @State var mapType = false
     
-    let islands: [String] = ["Hawai'i", "Maui", "O'ahu", "Kaua'i"]
+    let islands: [String] = ["Big Island", "Maui", "Oahu", "Kauai"]
     
     
     var body: some View {
-        ZStack {
-            MapViewContainer(annotationArr: vm.annotations)
-                .ignoresSafeArea(edges: .all)
-            HStack {
-                VStack {
-                    Button(action: {
-                        self.isMenuShowing.toggle()
-                    }, label: {
-                        Image(systemName: "line.horizontal.3.decrease.circle.fill")
-                            .font(.system(size: 44))
-                            .foregroundColor(.white)
-                            .shadow(radius: 5)
-                    })
-                    
-                    Spacer()
-                }
-                Spacer()
-            }.padding()
-            
-            Color(.init(white: 0, alpha: self.isMenuShowing ? 0.5 : 0))
-                .edgesIgnoringSafeArea(.all)
-                .animation(.spring())
-            
-            HStack {
-                ZStack {
-                    Color.white
-                        .edgesIgnoringSafeArea(.all)
-                        .onTapGesture {
-                            self.isMenuShowing.toggle()
-                        }
+        NavigationView {
+            ZStack {
+                MapViewContainer(annotationArr: vm.annotations)
+                    .ignoresSafeArea(edges: .all)
+                HStack {
                     VStack {
-                        HStack {
-                            Text("Menu").font(.system(size: 26, weight: .black, design: Font.Design.default))
-                            Spacer()
-                        }.padding()
-                        
-                        VStack {
-                            ForEach(islands, id: \.self) { island in
-                                Button(action: {
-                                    
-                                    
-                                    
-                                }, label: {
-                                    Text(island)
-                                })
-                            }
-                        }
+                        Button(action: {
+                            self.isMenuShowing.toggle()
+                        }, label: {
+                            Image(systemName: "line.horizontal.3.decrease.circle.fill")
+                                .font(.system(size: 44))
+                                .foregroundColor(.white)
+                                .shadow(radius: 5)
+                        })
                         
                         Spacer()
                     }
-                    
+                    Spacer()
+                }.padding()
+                
+                VStack {
+                    Spacer()
+                    ScrollView(.horizontal) {
+                        HStack {
+                            ForEach(vm.beachItems, id: \.beach_id) { i in
+                                MapButtonView(beach: i)
+                            }
+                        }.padding()
+                    }
+                }.padding(.bottom)
+                
+                Color(.init(white: 0, alpha: self.isMenuShowing ? 0.5 : 0))
+                    .edgesIgnoringSafeArea(.all)
+                    .animation(.spring())
+                
+                HStack {
+                    ZStack {
+                        Color.init(red: 50/255, green: 50/255, blue: 125/255, opacity: 1)
+                            .edgesIgnoringSafeArea(.all)
+                            .onTapGesture {
+                                self.isMenuShowing.toggle()
+                            }
+                        VStack {
+                            HStack {
+                                Text("Menu")
+                                    .foregroundColor(.white)
+                                    .font(Font.custom("Nunito-Bold", size: 30))
+                                Spacer()
+                            }.padding()
+                            
+                            VStack {
+                                ForEach(islands, id: \.self) { island in
+                                    
+                                        
+                                    NavigationLink(
+                                        destination: IslandView(beachToDisplay: island),
+                        //                    .ignoresSafeArea(edges: .all),
+                                        label: {
+                                            VStack {
+                                                Text(island)
+                                                    .foregroundColor(.white)
+                                                    .font(Font.custom("Nunito-Regular", size: 24))
+                                                
+                                                Divider().background(Color.white)
+                                            }.frame(height: 60, alignment: .center)
+                                        })
+                                        
+                                    
+                                }
+                            }
+                            
+                            Spacer()
+                        }
+                        
+                        
+                    }
+                    .frame(width: 200)
+                    Spacer()
                 }
-                .frame(width: 200)
-                Spacer()
-            }
-            .offset(x: self.isMenuShowing ? 0 : -200)
-            .animation(.easeInOut)
-//            VStack {
-//                Button("Fetch Beaches") {
-////                    vm.performSearch()
-//                }
-//                Spacer()
-//                ScrollView(.horizontal) {
-//
-//                    HStack {
-//                        ForEach(vm.mapItems, id: \.self) { item in
-//                            HStack {
-//                                VStack {
-//                                    Text(item.name ?? "")
-//                                }
-//                            }
-//
-//                            .frame(width: 250, height: 120, alignment: .center)
-//                            .background(Color.white)
-//                            .cornerRadius(20)
-//                            .animation(.easeIn)
-//                        }
-//                    }
-//
-//                }
-//            }
+                .offset(x: self.isMenuShowing ? 0 : -200)
+                .animation(.easeInOut)
 
-        }.onAppear() {
-//            vm.performSearch()
+            }
+            .navigationBarHidden(true)
         }
-//        List(vm.beachItems) { post in
-//            Text(post.beach)
-//        }
-//        .onAppear() {
-//            print("On appear")
-//            vm.performSearch { (posts) in
-//                vm.beachItems = posts
-//            }
-//        }
+        .navigationViewStyle(StackNavigationViewStyle())
+        .ignoresSafeArea(edges: .all)
         
         
     }

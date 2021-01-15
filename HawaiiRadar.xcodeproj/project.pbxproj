@@ -36,6 +36,7 @@
 		43A6A678259D350A0085127D /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43A6A675259D350A0085127D /* Nunito-Regular.ttf */; };
 		43A6A679259D350A0085127D /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43A6A676259D350A0085127D /* Nunito-Bold.ttf */; };
 		43A6A67A259D350A0085127D /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43A6A677259D350A0085127D /* Nunito-Light.ttf */; };
+		43BBAAEE25ACE925005A8E60 /* MapButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BBAAED25ACE925005A8E60 /* MapButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		43A6A675259D350A0085127D /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		43A6A676259D350A0085127D /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		43A6A677259D350A0085127D /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
+		43BBAAED25ACE925005A8E60 /* MapButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				43A314A825899CF3001C2462 /* MapView.swift */,
+				43BBAAED25ACE925005A8E60 /* MapButtonView.swift */,
 				4362F11925A2797F00B3F9A2 /* Island */,
 				4362F12225A27DA900B3F9A2 /* Detail */,
 				4318662B25929A4E006C81D1 /* Api.swift */,
@@ -381,6 +384,7 @@
 			files = (
 				4369251325A42DE900165B3E /* SurfView.swift in Sources */,
 				4318662C25929A4E006C81D1 /* Api.swift in Sources */,
+				43BBAAEE25ACE925005A8E60 /* MapButtonView.swift in Sources */,
 				4362F12425A27DBF00B3F9A2 /* DetailHeader.swift in Sources */,
 				4362F12C25A2802800B3F9A2 /* CurrentTempDetail.swift in Sources */,
 				4369251B25A4351800165B3E /* DetailMapView.swift in Sources */,
@@ -574,7 +578,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.odega.HawaiiRadar;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.odega.hawaiiradar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -596,7 +601,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.odega.HawaiiRadar;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.odega.hawaiiradar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

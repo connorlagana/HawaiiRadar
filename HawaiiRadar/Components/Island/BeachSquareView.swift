@@ -78,6 +78,12 @@ struct BeachSquareView: View {
                             .resizable()
                             .frame(width: 30, height: 30)
                             .foregroundColor(.white)
+                    case "Mostly Cloudy with Haze":
+                        Image("cloud")
+                            .renderingMode(.template)
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(.white)
                     default:
                         Text(beach.weather)
                     }

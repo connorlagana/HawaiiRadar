@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SurfView: View {
     
-    var showDetail = true
+    @State var showDetail = false
     var beach: BeachCondition
     
     var body: some View {
@@ -66,11 +66,19 @@ struct SurfView: View {
                         .resizable()
                         .frame(width: 20, height: 20)
                         .foregroundColor(Color.white)
-                        .rotationEffect(.degrees(Double(beach.wind.extractDirectionFromWind(str: beach.wind))))
+                        .rotationEffect(showDetail ? .degrees(Double(beach.wind.extractDirectionFromWind(str: beach.wind))) : .degrees(Double(0)))
+                        .animation(.easeInOut)
                 }
             }
             .frame(width: 110, height: 100)
-        }.padding()
+        }
+        .padding()
+        .onAppear {
+            Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { _ in
+                showDetail = true
+            }
+            
+        }
     }
 }
 
@@ -80,7 +88,7 @@ extension String {
     }
     
     func extractSpeedFromWind(str: String) -> String {
-        if str == "calm" {
+        if str == "calm" || str == "Calm" {
             return "0 MPH"
         }
         
@@ -89,7 +97,12 @@ extension String {
             if arr.contains("gusting") {
                 return ("\(arr[4]) MPH")
             }
-            return ("\(arr[2]) MPH")
+            if arr.count >= 3 {
+                return ("\(arr[2]) MPH")
+            }
+            
+            return str
+            
         }
     }
     
@@ -117,6 +130,18 @@ extension String {
             switch direction {
             case "Northeast":
                 return -45
+            case "North":
+                return -90
+            case "Northwest":
+                return -135
+            case "West":
+                return 180
+            case "Southwest":
+                return 135
+            case "South":
+                return 90
+            case "Southeast":
+                return 45
             default:
                 return 0
             }
