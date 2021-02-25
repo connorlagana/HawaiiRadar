@@ -18,8 +18,22 @@ struct DetailHeader: View {
     let date = Date()
     let calendar = Calendar.current
     
+    @Binding var fButtonPressed: Bool
+    @Binding var showingDetail: Bool
+    
     var body: some View {
         HStack {
+            Button {
+                //dismiss
+                print("dismissing")
+                showingDetail.toggle()
+            } label: {
+                Image(systemName: "xmark.circle.fill")
+                    .font(.system(size: 24))
+                    .foregroundColor(.white)
+                    .shadow(radius: 5)
+            }
+
             Spacer()
             HStack(spacing: 5) {
                 Text("\(getWeekday(weekday: calendar.component(.weekday, from: date))),")
@@ -36,10 +50,14 @@ struct DetailHeader: View {
             }
             .padding(.leading, size)
             Spacer()
-            Text("°F")
-                .foregroundColor(.white)
-                .font(Font.custom("Nunito-Bold", size: 18))
-                .frame(width: size, height: size, alignment: .leading)
+            Button(action: {
+                fButtonPressed.toggle()
+            }, label: {
+                Text("°F")
+                    .foregroundColor(.white)
+                    .font(Font.custom("Nunito-Bold", size: 18))
+                    .frame(width: size, height: size, alignment: .leading)
+            })
         }
         .padding(20)
         .onAppear {
@@ -100,12 +118,6 @@ struct DetailHeader: View {
             return "\(month)"
         }
         return ""
-    }
-}
-
-struct DetailHeader_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailHeader()
     }
 }
 

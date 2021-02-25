@@ -11,6 +11,7 @@ struct IslandView: View {
     var beachToDisplay: String
     
     @State var beachConditions = [BeachCondition]()
+    @State var showingDetail = false
     
     var body: some View {
         
@@ -20,26 +21,16 @@ struct IslandView: View {
                 .ignoresSafeArea(edges: .all)
             
             VStack(alignment: .center) {
-                
                 IslandHeader(beachToDisplay: self.beachToDisplay)
-                
-                IslandScrollView(beachConditions: self.beachConditions)
-                
-                
+                IslandScrollView(beachConditions: self.beachConditions, showingDetail: $showingDetail)
             }
             .navigationBarHidden(true)
             .onAppear(perform: {
                 Api().getislandData(island: beachToDisplay) { (posts) in
                     self.beachConditions = posts
-                    
                 }
             })
         }
-        
-        
-        
-        
-        
     }
 }
 

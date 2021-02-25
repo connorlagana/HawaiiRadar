@@ -13,6 +13,8 @@ struct CurrentTempDetail: View {
     
     @State var showDetail = false
     
+    @Binding var temp: Int
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -21,7 +23,7 @@ struct CurrentTempDetail: View {
                         .foregroundColor(.white)
                         .font(Font.custom("Nunito-Bold", size: 14))
                         
-                    Text("\(beach.temp)°")
+                    Text("\(temp ?? 0)°")
                         .foregroundColor(.white)
                         .font(Font.custom("Nunito-Bold", size: 84))
                         .padding(.top, 20)
@@ -110,6 +112,22 @@ struct CurrentTempDetail: View {
                             .frame(width: 100, height: 100, alignment: .trailing)
                             .scaleEffect(showDetail ? 1 : 0)
                             .animation(.spring())
+                    case "Fog/Mist and Breezy":
+                        Image("wind-big")
+                            .renderingMode(.template)
+                            .resizable()
+                            .foregroundColor(.white)
+                            .frame(width: 100, height: 100, alignment: .trailing)
+                            .scaleEffect(showDetail ? 1 : 0)
+                            .animation(.spring())
+                    case "Rain and Breezy":
+                        Image("rain-big")
+                            .renderingMode(.template)
+                            .resizable()
+                            .foregroundColor(.white)
+                            .frame(width: 100, height: 100, alignment: .trailing)
+                            .scaleEffect(showDetail ? 1 : 0)
+                            .animation(.spring())
                     default:
                         Text(beach.weather)
                     }
@@ -134,8 +152,12 @@ struct CurrentTempDetail: View {
                 showDetail = true
             }
             
+            
+            
         }
     }
+    
+    
 }
 
 

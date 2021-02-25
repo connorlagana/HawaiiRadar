@@ -10,7 +10,7 @@ import SwiftUI
 struct BeachSquareView: View {
     var beach: BeachCondition
     
-    @State var showingDetail = false
+    @Binding var showingDetail: Bool
     
     
     var body: some View {
@@ -84,6 +84,18 @@ struct BeachSquareView: View {
                             .resizable()
                             .frame(width: 30, height: 30)
                             .foregroundColor(.white)
+                    case "Fog/Mist and Breezy":
+                        Image("wind")
+                            .renderingMode(.template)
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(.white)
+                    case "Rain and Breezy":
+                        Image("rain")
+                            .renderingMode(.template)
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(.white)
                     default:
                         Text(beach.weather)
                     }
@@ -100,7 +112,7 @@ struct BeachSquareView: View {
                 }
             }
             .sheet(isPresented: $showingDetail, content: {
-                DetailView(beach: beach)
+                DetailView(beach: beach, showingDetail: $showingDetail)
             })
             .frame(width: 150, height: 150, alignment: .center)
             .padding(.all, 10)

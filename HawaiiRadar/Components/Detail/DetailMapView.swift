@@ -15,6 +15,7 @@ struct MapViewContainer2: UIViewRepresentable {
     var annotation: MKPointAnnotation?
     var beachCon: BeachCondition?
     
+    
     func makeUIView(context: Context) -> MKMapView {
         
         //THIS IS REALLY BAD CODE BUT IT WORKS SO AS OF RIGHT NOW IM GONNA LEAVE IT BC IM REALLY TIRED RN

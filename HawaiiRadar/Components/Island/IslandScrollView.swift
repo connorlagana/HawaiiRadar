@@ -10,6 +10,7 @@ import SwiftUI
 struct IslandScrollView: View {
     
     var beachConditions: [BeachCondition]
+    @Binding var showingDetail: Bool
     
     var body: some View {
         ScrollView {
@@ -20,7 +21,7 @@ struct IslandScrollView: View {
             ], spacing: 12, content: {
                 ForEach(beachConditions, id: \.self) { beach in
                     
-                    BeachSquareView(beach: beach)
+                    BeachSquareView(beach: beach, showingDetail: $showingDetail)
                     
                 }
             })

@@ -23,6 +23,7 @@
 		4362F13E25A2B69300B3F9A2 /* WeeklyForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362F13D25A2B69300B3F9A2 /* WeeklyForecastView.swift */; };
 		4369251325A42DE900165B3E /* SurfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4369251225A42DE900165B3E /* SurfView.swift */; };
 		4369251B25A4351800165B3E /* DetailMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4369251A25A4351800165B3E /* DetailMapView.swift */; };
+		438CB0AC25E833D8000259B8 /* ShowInMapsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438CB0AB25E833D8000259B8 /* ShowInMapsButton.swift */; };
 		43960F0825A396620032701F /* BeachSquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43960F0725A396620032701F /* BeachSquareView.swift */; };
 		43A3147525899C87001C2462 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A3147425899C87001C2462 /* AppDelegate.swift */; };
 		43A3147725899C87001C2462 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A3147625899C87001C2462 /* SceneDelegate.swift */; };
@@ -37,6 +38,10 @@
 		43A6A679259D350A0085127D /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43A6A676259D350A0085127D /* Nunito-Bold.ttf */; };
 		43A6A67A259D350A0085127D /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43A6A677259D350A0085127D /* Nunito-Light.ttf */; };
 		43BBAAEE25ACE925005A8E60 /* MapButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BBAAED25ACE925005A8E60 /* MapButtonView.swift */; };
+		43D5DE2A25B9FB3D00B46624 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D5DE2925B9FB3D00B46624 /* MenuButton.swift */; };
+		43D5DE2F25B9FC0900B46624 /* SlideOutMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D5DE2E25B9FC0900B46624 /* SlideOutMenu.swift */; };
+		43D5DE3425BA09B400B46624 /* MapViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D5DE3325BA09B400B46624 /* MapViewContainer.swift */; };
+		43D5DE3925BA09E000B46624 /* MapSearchingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D5DE3825BA09E000B46624 /* MapSearchingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +77,7 @@
 		4362F13D25A2B69300B3F9A2 /* WeeklyForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyForecastView.swift; sourceTree = "<group>"; };
 		4369251225A42DE900165B3E /* SurfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfView.swift; sourceTree = "<group>"; };
 		4369251A25A4351800165B3E /* DetailMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMapView.swift; sourceTree = "<group>"; };
+		438CB0AB25E833D8000259B8 /* ShowInMapsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowInMapsButton.swift; sourceTree = "<group>"; };
 		43960F0725A396620032701F /* BeachSquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeachSquareView.swift; sourceTree = "<group>"; };
 		43A3147125899C87001C2462 /* HawaiiRadar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HawaiiRadar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A3147425899C87001C2462 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +98,10 @@
 		43A6A676259D350A0085127D /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		43A6A677259D350A0085127D /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
 		43BBAAED25ACE925005A8E60 /* MapButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapButtonView.swift; sourceTree = "<group>"; };
+		43D5DE2925B9FB3D00B46624 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		43D5DE2E25B9FC0900B46624 /* SlideOutMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOutMenu.swift; sourceTree = "<group>"; };
+		43D5DE3325BA09B400B46624 /* MapViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewContainer.swift; sourceTree = "<group>"; };
+		43D5DE3825BA09E000B46624 /* MapSearchingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +160,7 @@
 				4362F13D25A2B69300B3F9A2 /* WeeklyForecastView.swift */,
 				4369251225A42DE900165B3E /* SurfView.swift */,
 				4369251A25A4351800165B3E /* DetailMapView.swift */,
+				438CB0AB25E833D8000259B8 /* ShowInMapsButton.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -220,8 +231,7 @@
 		43A314A725899CD2001C2462 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				43A314A825899CF3001C2462 /* MapView.swift */,
-				43BBAAED25ACE925005A8E60 /* MapButtonView.swift */,
+				43D5DE2825B9FB1E00B46624 /* Map */,
 				4362F11925A2797F00B3F9A2 /* Island */,
 				4362F12225A27DA900B3F9A2 /* Detail */,
 				4318662B25929A4E006C81D1 /* Api.swift */,
@@ -239,6 +249,19 @@
 				43A6A675259D350A0085127D /* Nunito-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		43D5DE2825B9FB1E00B46624 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				43A314A825899CF3001C2462 /* MapView.swift */,
+				43D5DE3325BA09B400B46624 /* MapViewContainer.swift */,
+				43D5DE3825BA09E000B46624 /* MapSearchingViewModel.swift */,
+				43D5DE2E25B9FC0900B46624 /* SlideOutMenu.swift */,
+				43D5DE2925B9FB3D00B46624 /* MenuButton.swift */,
+				43BBAAED25ACE925005A8E60 /* MapButtonView.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,12 +411,17 @@
 				4362F12425A27DBF00B3F9A2 /* DetailHeader.swift in Sources */,
 				4362F12C25A2802800B3F9A2 /* CurrentTempDetail.swift in Sources */,
 				4369251B25A4351800165B3E /* DetailMapView.swift in Sources */,
+				438CB0AC25E833D8000259B8 /* ShowInMapsButton.swift in Sources */,
 				4362F11525A2796500B3F9A2 /* IslandHeader.swift in Sources */,
+				43D5DE3425BA09B400B46624 /* MapViewContainer.swift in Sources */,
 				4362842C259D4C8D0008CAC1 /* DetailView.swift in Sources */,
 				43A3147525899C87001C2462 /* AppDelegate.swift in Sources */,
 				4362F13925A2AF0B00B3F9A2 /* DetailHScroll.swift in Sources */,
 				43A314A925899CF3001C2462 /* MapView.swift in Sources */,
 				43A3147725899C87001C2462 /* SceneDelegate.swift in Sources */,
+				43D5DE2F25B9FC0900B46624 /* SlideOutMenu.swift in Sources */,
+				43D5DE3925BA09E000B46624 /* MapSearchingViewModel.swift in Sources */,
+				43D5DE2A25B9FB3D00B46624 /* MenuButton.swift in Sources */,
 				4362F13E25A2B69300B3F9A2 /* WeeklyForecastView.swift in Sources */,
 				4318663F2592A14A006C81D1 /* LottieView.swift in Sources */,
 				4362F11B25A279B400B3F9A2 /* IslandScrollView.swift in Sources */,

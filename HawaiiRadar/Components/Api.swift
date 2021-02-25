@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+struct BeachItem: Decodable, Hashable {
+    let beach, island, shore, lat, lon, nearshore, offshore, updated: String
+}
+
 struct BeachCondition: Decodable, Hashable {
     let beach, island, shore, lat, lon, nearshore, offshore, temp, weather, wind, surf, beach_id: String
 }

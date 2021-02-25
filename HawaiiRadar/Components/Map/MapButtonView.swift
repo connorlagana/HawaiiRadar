@@ -6,16 +6,18 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct MapButtonView: View {
     var beach: BeachCondition
     
-    @State var showingDetail = false
+    @Binding var showingDetail: Bool
+    @Binding var selectedMapItem: BeachCondition?
     
     var body: some View {
         Button(action: {
             showingDetail.toggle()
-            print("Hello world: ", beach)
+//            selectedMapItem = beach
         }, label: {
             VStack {
                 Text(beach.beach)
@@ -30,7 +32,7 @@ struct MapButtonView: View {
         .background(Color.white)
         .cornerRadius(10)
         .sheet(isPresented: $showingDetail, content: {
-            DetailView(beach: beach)
+            DetailView(beach: beach, showingDetail: $showingDetail)
         })
     }
 }
